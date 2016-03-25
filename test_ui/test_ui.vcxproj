@@ -200,7 +200,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_test_ui.h" />
-    <ClInclude Include="test.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="test_ui.qrc">
