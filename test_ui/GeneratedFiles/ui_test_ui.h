@@ -17,10 +17,8 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 #include "qwt_plot.h"
-#include "qwt_text_label.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -29,32 +27,27 @@ class Ui_test_uiClass
 public:
     QWidget *centralWidget;
     QwtPlot *qwtPlot;
-    QwtTextLabel *TextLabel;
     QMenuBar *menuBar;
-    QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *test_uiClass)
     {
         if (test_uiClass->objectName().isEmpty())
             test_uiClass->setObjectName(QStringLiteral("test_uiClass"));
-        test_uiClass->resize(790, 588);
+        test_uiClass->resize(1000, 600);
         centralWidget = new QWidget(test_uiClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         qwtPlot = new QwtPlot(centralWidget);
         qwtPlot->setObjectName(QStringLiteral("qwtPlot"));
-        qwtPlot->setGeometry(QRect(190, 150, 400, 200));
-        TextLabel = new QwtTextLabel(centralWidget);
-        TextLabel->setObjectName(QStringLiteral("TextLabel"));
-        TextLabel->setGeometry(QRect(280, 80, 100, 20));
+        qwtPlot->setGeometry(QRect(680, 400, 300, 150));
+        QBrush brush(QColor(0, 0, 0, 255));
+        brush.setStyle(Qt::SolidPattern);
+        qwtPlot->setCanvasBackground(brush);
         test_uiClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(test_uiClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 790, 23));
+        menuBar->setGeometry(QRect(0, 0, 1000, 23));
         test_uiClass->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(test_uiClass);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        test_uiClass->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(test_uiClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         test_uiClass->setStatusBar(statusBar);
@@ -67,7 +60,6 @@ public:
     void retranslateUi(QMainWindow *test_uiClass)
     {
         test_uiClass->setWindowTitle(QApplication::translate("test_uiClass", "test_ui", 0));
-        TextLabel->setPlainText(QApplication::translate("test_uiClass", "\346\265\213\350\257\225\346\233\264\346\224\271", 0));
     } // retranslateUi
 
 };
