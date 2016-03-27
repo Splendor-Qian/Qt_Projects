@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
@@ -27,6 +28,7 @@ class Ui_test_uiClass
 public:
     QWidget *centralWidget;
     QwtPlot *qwtPlot;
+    QLabel *label;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
 
@@ -43,6 +45,9 @@ public:
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
         qwtPlot->setCanvasBackground(brush);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(30, 30, 111, 16));
         test_uiClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(test_uiClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -60,6 +65,7 @@ public:
     void retranslateUi(QMainWindow *test_uiClass)
     {
         test_uiClass->setWindowTitle(QApplication::translate("test_uiClass", "test_ui", 0));
+        label->setText(QApplication::translate("test_uiClass", "\346\265\213\350\257\225\346\240\207\345\277\227 20150327", 0));
     } // retranslateUi
 
 };
