@@ -1,4 +1,4 @@
-#include "test_ui.h"
+ï»¿#include "test_ui.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
@@ -6,6 +6,6 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 	test_ui w;
 	w.show();
-	//²âÊÔ¸ü¸Ä£¬¿´ÊÇ·ñÄÜÍ¬²½µ½·şÎñÆ÷
+	//æµ‹è¯•æ›´æ”¹ï¼Œçœ‹æ˜¯å¦èƒ½åŒæ­¥åˆ°æœåŠ¡å™¨,æ–‡ä»¶ç‰ˆæœ¬ä¿®æ”¹ä¸ºUTF-8
 	return a.exec();
 }
