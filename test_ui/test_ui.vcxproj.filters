@@ -33,6 +33,9 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Ui_Picture">
+      <UniqueIdentifier>{e703174d-2cb5-4a92-b956-302d3259a783}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,5 +74,10 @@
     <Text Include="readme.txt">
       <Filter>Header Files</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="操作界面.png">
+      <Filter>Ui_Picture</Filter>
+    </Image>
   </ItemGroup>
 </Project>
